@@ -56,11 +56,12 @@ public:
     QLabel *label_8;
     QWidget *tab_3;
     QGridLayout *gridLayout_4;
-    QLabel *label_9;
-    QTextEdit *textEdit;
     QLabel *label_10;
     QTextEdit *textEdit_2;
+    QTextEdit *textEdit;
     QPushButton *pushButton_3;
+    QLabel *label_9;
+    QPushButton *pushButton_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -69,7 +70,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(400, 300);
+        MainWindow->resize(392, 391);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         gridLayout_3 = new QGridLayout(centralWidget);
@@ -206,16 +207,6 @@ public:
         gridLayout_4->setSpacing(6);
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
-        label_9 = new QLabel(tab_3);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-
-        gridLayout_4->addWidget(label_9, 0, 0, 1, 1);
-
-        textEdit = new QTextEdit(tab_3);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
-
-        gridLayout_4->addWidget(textEdit, 0, 1, 1, 1);
-
         label_10 = new QLabel(tab_3);
         label_10->setObjectName(QString::fromUtf8("label_10"));
 
@@ -226,10 +217,25 @@ public:
 
         gridLayout_4->addWidget(textEdit_2, 0, 3, 1, 1);
 
+        textEdit = new QTextEdit(tab_3);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+
+        gridLayout_4->addWidget(textEdit, 0, 1, 1, 1);
+
         pushButton_3 = new QPushButton(tab_3);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
 
         gridLayout_4->addWidget(pushButton_3, 1, 1, 1, 3);
+
+        label_9 = new QLabel(tab_3);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+
+        gridLayout_4->addWidget(label_9, 0, 0, 1, 1);
+
+        pushButton_4 = new QPushButton(tab_3);
+        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+
+        gridLayout_4->addWidget(pushButton_4, 2, 1, 1, 3);
 
         tabWidget->addTab(tab_3, QString());
 
@@ -238,7 +244,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 21));
+        menuBar->setGeometry(QRect(0, 0, 392, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -296,9 +302,10 @@ public:
         label_7->setText(QCoreApplication::translate("MainWindow", "Period", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Power Level (0-100)", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Controle", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "Input Signal", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Output Signal", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Collect Output Signal", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "Input Signal", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Save Data", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Identifica\303\247\303\243o", nullptr));
     } // retranslateUi
 

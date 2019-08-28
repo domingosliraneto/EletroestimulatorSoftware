@@ -98,3 +98,21 @@ void MainWindow::sendIdentificationData()
     if(this->iterator == doc->blockCount())
         disconnect(timer, SIGNAL(timeout()), this, SLOT(sendIdentificationData()));
 }
+
+void MainWindow::on_pushButton_4_clicked()
+{
+    QTextDocument *doc1 = this->ui->textEdit->document();
+    QTextDocument *doc2 = this->ui->textEdit_2->document();
+
+    QFile data("output.txt");
+    if (data.open(QFile::WriteOnly | QFile::Truncate)) {
+        QTextStream out(&data);
+        out << "Input,Output \n";
+        for(unsigned i = 0; i < doc1->blockCount(); ++i)
+        {
+            QTextBlock tb1 = doc1->findBlockByLineNumber(i); // The second line.
+            QTextBlock tb2 = doc2->findBlockByLineNumber(i); // The second line.
+            out <<  tb1.text() << "," << tb2.text() << "\n";
+        }
+    }
+}

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>392</width>
+    <height>391</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -247,16 +247,6 @@
         <string>Identificação</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Input Signal</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QTextEdit" name="textEdit"/>
-        </item>
         <item row="0" column="2">
          <widget class="QLabel" name="label_10">
           <property name="text">
@@ -267,10 +257,27 @@
         <item row="0" column="3">
          <widget class="QTextEdit" name="textEdit_2"/>
         </item>
+        <item row="0" column="1">
+         <widget class="QTextEdit" name="textEdit"/>
+        </item>
         <item row="1" column="1" colspan="3">
          <widget class="QPushButton" name="pushButton_3">
           <property name="text">
            <string>Collect Output Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Input Signal</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="3">
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="text">
+           <string>Save Data</string>
           </property>
          </widget>
         </item>
@@ -285,7 +292,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>392</width>
      <height>21</height>
     </rect>
    </property>

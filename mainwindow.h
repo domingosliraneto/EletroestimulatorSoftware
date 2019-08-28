@@ -34,6 +34,8 @@ private slots:
 
     void dadosRecebidos();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     Client *wifi;
