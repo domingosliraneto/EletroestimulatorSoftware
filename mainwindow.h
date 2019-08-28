@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QString>
+#include <QTextDocument>
+#include <QTextBlock>
 
 #include "client.h"
 
@@ -26,10 +28,18 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
+    void sendIdentificationData();
+
+    void dadosRecebidos();
+
 private:
     Ui::MainWindow *ui;
     Client *wifi;
     QString dataToSend;
+    unsigned int iterator;
+    QTimer *timer;
 };
 
 #endif // MAINWINDOW_H

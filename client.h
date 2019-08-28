@@ -9,6 +9,7 @@
 #include <QString>
 #include <QTcpSocket>
 #include <QHostAddress>
+#include <thread>
 
 class Client: public QObject
 {

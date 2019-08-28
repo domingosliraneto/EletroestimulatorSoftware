@@ -21,6 +21,8 @@ void MainWindow::on_pushButton_clicked()
                             this->ui->lineEdit_2->text().toUInt());
     connect(this->wifi, SIGNAL(connectionSuccessful()), this,
             SLOT(Conectado()));
+    connect(this->wifi, SIGNAL(hasReadData()), this,
+            SLOT(dadosRecebidos()));
 }
 
 void MainWindow::Conectado()
@@ -34,7 +36,10 @@ void MainWindow::Conectado()
 //    this->wifi->writeData(dataToSend);
 }
 
-
+void MainWindow::dadosRecebidos()
+{
+    this->ui->textEdit_2->append(this->wifi->dataReceived());
+}
 
 void MainWindow::on_pushButton_2_clicked()
 {
@@ -56,4 +61,40 @@ void MainWindow::on_pushButton_2_clicked()
 
     if(this->wifi)
         this->wifi->writeData(str);
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(sendIdentificationData()));
+    timer->start(100);
+    this->iterator = 0;
+}
+
+void MainWindow::sendIdentificationData()
+{
+    QString str;
+
+    str.append(ui->controlType->currentIndex() + 1);
+
+    str.append(ui->channel->currentIndex() + 1);
+
+    str.append(ui->Modes->currentIndex() + 1);
+
+    str.append((uint8_t)(ui->frequency->text().toUInt()/256) + 1);
+    str.append((uint8_t)(ui->frequency->text().toUInt()-((uint8_t)(ui->frequency->text().toUInt()/256))*256) + 1);
+
+    str.append((uint8_t)(ui->period->text().toUInt()/256) + 1);
+    str.append((uint8_t)(ui->period->text().toUInt()-((uint8_t)(ui->period->text().toUInt()/256))*256) + 1);
+
+    QTextDocument *doc = this->ui->textEdit->document();
+    QTextBlock tb = doc->findBlockByLineNumber(this->iterator); // The second line.
+    QString powerLevel = tb.text();
+    str.append((uint8_t)(powerLevel.toUInt()) + 1);
+
+    if(this->wifi)
+        this->wifi->writeData(str);
+    this->iterator++;
+    if(this->iterator == doc->blockCount())
+        disconnect(timer, SIGNAL(timeout()), this, SLOT(sendIdentificationData()));
 }
