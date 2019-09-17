@@ -6,6 +6,7 @@
 #include <QString>
 #include <QTextDocument>
 #include <QTextBlock>
+#include <QDateTime>
 
 #include "client.h"
 

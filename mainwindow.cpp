@@ -39,6 +39,7 @@ void MainWindow::Conectado()
 void MainWindow::dadosRecebidos()
 {
     this->ui->textEdit_2->append(this->wifi->dataReceived());
+    this->ui->textEdit_3->append(QString::number(QDateTime::currentMSecsSinceEpoch()));
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -103,6 +104,7 @@ void MainWindow::on_pushButton_4_clicked()
 {
     QTextDocument *doc1 = this->ui->textEdit->document();
     QTextDocument *doc2 = this->ui->textEdit_2->document();
+    QTextDocument *doc3 = this->ui->textEdit_3->document();
 
     QFile data("output.txt");
     if (data.open(QFile::WriteOnly | QFile::Truncate)) {
@@ -112,7 +114,8 @@ void MainWindow::on_pushButton_4_clicked()
         {
             QTextBlock tb1 = doc1->findBlockByLineNumber(i); // The second line.
             QTextBlock tb2 = doc2->findBlockByLineNumber(i); // The second line.
-            out <<  tb1.text() << "," << tb2.text() << "\n";
+            QTextBlock tb3 = doc3->findBlockByLineNumber(i); // The second line.
+            out <<  tb1.text() << "," << tb2.text() << "," << tb3.text() << "\n";
         }
     }
 }
