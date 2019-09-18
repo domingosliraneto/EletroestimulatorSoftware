@@ -26,9 +26,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    client.cpp
+    client.cpp \
+    measurementadjustment.cpp
 
 HEADERS  += mainwindow.h \
-    client.h
+    SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h \
+    SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp \
+    client.h \
+    measurementadjustment.h
 
 FORMS    += mainwindow.ui

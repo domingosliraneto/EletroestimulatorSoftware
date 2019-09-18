@@ -7,6 +7,8 @@
 #include <QTextDocument>
 #include <QTextBlock>
 #include <QDateTime>
+#include "measurementadjustment.h"
+#include "SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h"
 
 #include "client.h"
 
@@ -37,12 +39,17 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MainWindow *ui;
     Client *wifi;
     QString dataToSend;
     unsigned int iterator;
     QTimer *timer;
+    MeasurementAdjustment accelX, pitch, roll;
+
+    void setDefaultAdjustment();
 };
 
 #endif // MAINWINDOW_H

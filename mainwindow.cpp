@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     dataToSend = "00000\n";
     this->wifi = nullptr;
+    setDefaultAdjustment();
 }
 
 MainWindow::~MainWindow()
@@ -38,7 +39,12 @@ void MainWindow::Conectado()
 
 void MainWindow::dadosRecebidos()
 {
-    this->ui->textEdit_2->append(this->wifi->dataReceived());
+    LinAlg::Matrix<double> values = this->wifi->dataReceived().toStdString().c_str();
+    values(1,1) = accelX.rescale(values(1,1));
+    values(1,2) = pitch.rescale(values(1,2));
+    values(1,3) = roll.rescale(values(1,3));
+    std::string str; str << values;
+    this->ui->textEdit_2->append(str.c_str());
     this->ui->textEdit_3->append(QString::number(QDateTime::currentMSecsSinceEpoch()));
 }
 
@@ -118,4 +124,27 @@ void MainWindow::on_pushButton_4_clicked()
             out <<  tb1.text() << "," << tb2.text() << "," << tb3.text() << "\n";
         }
     }
+}
+
+void MainWindow::setDefaultAdjustment()
+{
+    accelX.setMinInput(ui->gMin->text().toDouble());
+    accelX.setMaxInput(ui->gMax->text().toDouble());
+    accelX.setMinOutput(ui->gRefMin->text().toDouble());
+    accelX.setMaxOutput(ui->gRefMax->text().toDouble());
+
+    pitch.setMinInput(ui->pitchMin->text().toDouble());
+    pitch.setMaxInput(ui->pitchMax->text().toDouble());
+    pitch.setMinOutput(ui->pitchRefMin->text().toDouble());
+    pitch.setMaxOutput(ui->pitchRefMax->text().toDouble());
+
+    roll.setMinInput(ui->rollMin->text().toDouble());
+    roll.setMaxInput(ui->rollMax->text().toDouble());
+    roll.setMinOutput(ui->rollRefMin->text().toDouble());
+    roll.setMaxOutput(ui->rollRefMax->text().toDouble());
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    setDefaultAdjustment();
 }
