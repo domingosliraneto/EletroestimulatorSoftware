@@ -99,7 +99,7 @@ void Client::Awake() {
  */
 
 void Client::readData(){
-    char buffer[1024] = {0};
+    char buffer[10000] = {0};
     unsigned sizeChar = socket.bytesAvailable();
     socket.read(buffer, socket.bytesAvailable());
 
