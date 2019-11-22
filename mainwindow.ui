@@ -6,281 +6,432 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>758</width>
-    <height>387</height>
+    <width>911</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_3">
-    <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>2</number>
-      </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Conexão</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>IP</string>
-          </property>
-         </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>893</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Conexão</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>IP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="text">
+         <string>192.168.4.1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Porta</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="text">
+         <string>4000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Conectar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Controle</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="6" colspan="2">
+       <widget class="QComboBox" name="channel">
+        <item>
+         <property name="text">
+          <string>0</string>
+         </property>
         </item>
-        <item row="0" column="1">
-         <widget class="QLineEdit" name="lineEdit">
-          <property name="text">
-           <string>192.168.4.1</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>1</string>
+         </property>
         </item>
-        <item row="1" column="0">
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Porta</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
         </item>
-        <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_2">
-          <property name="text">
-           <string>4000</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>3</string>
+         </property>
         </item>
-        <item row="2" column="1">
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>Conectar</string>
-          </property>
-         </widget>
+       </widget>
+      </item>
+      <item row="3" column="7">
+       <widget class="QLineEdit" name="powerLevel">
+        <property name="text">
+         <string>50</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3" colspan="2">
+       <widget class="QComboBox" name="controlType">
+        <property name="toolTipDuration">
+         <number>-1</number>
+        </property>
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>Stop</string>
+         </property>
         </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Controle</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="6" colspan="2">
-         <widget class="QComboBox" name="channel">
-          <item>
-           <property name="text">
-            <string>0</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Refresh</string>
+         </property>
         </item>
-        <item row="3" column="7">
-         <widget class="QLineEdit" name="powerLevel">
-          <property name="text">
-           <string>50</string>
-          </property>
-         </widget>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3" colspan="4">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>Configure</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3" colspan="2">
+       <widget class="QComboBox" name="Modes">
+        <item>
+         <property name="text">
+          <string>Burst</string>
+         </property>
         </item>
-        <item row="0" column="3" colspan="2">
-         <widget class="QComboBox" name="controlType">
-          <property name="toolTipDuration">
-           <number>-1</number>
-          </property>
-          <property name="currentIndex">
-           <number>1</number>
-          </property>
-          <item>
-           <property name="text">
-            <string>Stop</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Refresh</string>
-           </property>
-          </item>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Normal</string>
+         </property>
         </item>
-        <item row="0" column="5">
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>Channel</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Modulation</string>
+         </property>
         </item>
-        <item row="4" column="3" colspan="4">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>Configure</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Sd1</string>
+         </property>
         </item>
-        <item row="1" column="3" colspan="2">
-         <widget class="QComboBox" name="Modes">
-          <item>
-           <property name="text">
-            <string>Burst</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Normal</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Modulation</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Sd1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Sd2</string>
-           </property>
-          </item>
-         </widget>
+        <item>
+         <property name="text">
+          <string>Sd2</string>
+         </property>
         </item>
-        <item row="1" column="6" colspan="2">
-         <widget class="QLineEdit" name="frequency">
-          <property name="text">
-           <string>2</string>
-          </property>
-         </widget>
+       </widget>
+      </item>
+      <item row="1" column="6" colspan="2">
+       <widget class="QLineEdit" name="frequency">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Frequency</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="4">
+       <widget class="QLineEdit" name="period">
+        <property name="text">
+         <string>250</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>Modes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Control Type</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Period</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="5" colspan="2">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Power Level (0-100)</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Identificação Angle</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Output Signal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>Time Lapsed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="4">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>Save Data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QTextEdit" name="textEdit_3"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Input Signal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QTextEdit" name="textEdit"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="4">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>Collect Output Signal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="2">
+       <widget class="QTextEdit" name="textEdit_2"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Boost Calibration</string>
+     </attribute>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="6">
+       <widget class="QLabel" name="label_18">
+        <property name="text">
+         <string>Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_17">
+        <property name="text">
+         <string>Exitation Type</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>Max Limit</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLineEdit" name="minLimit">
+        <property name="text">
+         <string>10</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <widget class="QComboBox" name="channel_2">
+        <item>
+         <property name="text">
+          <string>0</string>
+         </property>
         </item>
-        <item row="1" column="5">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Frequency</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>1</string>
+         </property>
         </item>
-        <item row="3" column="1" colspan="4">
-         <widget class="QLineEdit" name="period">
-          <property name="text">
-           <string>250</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
         </item>
-        <item row="1" column="0" colspan="3">
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>Modes</string>
-          </property>
-         </widget>
+        <item>
+         <property name="text">
+          <string>3</string>
+         </property>
         </item>
-        <item row="0" column="0" colspan="3">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>Control Type</string>
-          </property>
-         </widget>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="boostCalibration">
+        <item>
+         <property name="text">
+          <string>squaredWaveExitationLoop</string>
+         </property>
         </item>
-        <item row="3" column="0">
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>Period</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="5" colspan="2">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Power Level (0-100)</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="tab_3">
-       <attribute name="title">
-        <string>Identificação</string>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_4">
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Output Signal</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="4">
-         <widget class="QTextEdit" name="textEdit_3"/>
-        </item>
-        <item row="0" column="4">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>Time Lapsed</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>                                                                                                           </string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="label_12">
-          <property name="text">
-           <string>Input Signal</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QTextEdit" name="textEdit"/>
-        </item>
-        <item row="1" column="1" colspan="3">
-         <widget class="QTextEdit" name="textEdit_2"/>
-        </item>
-        <item row="2" column="0" colspan="5">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="text">
-           <string>Collect Output Signal</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="0" colspan="5">
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="text">
-           <string>Save Data</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-    </item>
-   </layout>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>Input Signal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" colspan="3">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Output Signal</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="5">
+       <widget class="QLineEdit" name="maxLimit">
+        <property name="text">
+         <string>40</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2" colspan="5">
+       <widget class="QTextEdit" name="textEdit_4"/>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_16">
+        <property name="text">
+         <string>Min Limit</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QTextEdit" name="textEdit_5"/>
+      </item>
+      <item row="4" column="1" colspan="5">
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="text">
+         <string>Start Calibration Process</string>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="5">
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="text">
+         <string>Calculate Transfer Function</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="text">
+         <string>0.51987</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_19">
+        <property name="text">
+         <string>numerator</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="3" colspan="2">
+       <widget class="QLineEdit" name="lineEdit_4">
+        <property name="text">
+         <string>1,-0.949896</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>denominator</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>758</width>
-     <height>21</height>
+     <width>911</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

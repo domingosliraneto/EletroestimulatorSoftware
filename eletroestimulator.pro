@@ -29,6 +29,38 @@ SOURCES += main.cpp\
     client.cpp
 
 HEADERS  += mainwindow.h \
+    SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h \
+    SistemasdeControle/headers/controlLibs/pid.h \
+    SistemasdeControle/headers/modelLibs/arx.h \
+    SistemasdeControle/headers/modelLibs/conversions.h \
+    SistemasdeControle/headers/modelLibs/integrativemodel.h \
+    SistemasdeControle/headers/modelLibs/model.h \
+    SistemasdeControle/headers/modelLibs/predictionmodel.h \
+    SistemasdeControle/headers/modelLibs/statespace.h \
+    SistemasdeControle/headers/modelLibs/transferfunction.h \
+    SistemasdeControle/headers/optimizationLibs/leastsquare.h \
+    SistemasdeControle/headers/optimizationLibs/optimization.h \
+    SistemasdeControle/headers/optimizationLibs/pso.h \
+    SistemasdeControle/headers/optimizationLibs/recursiveleastsquare.h \
+    SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h \
+    SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h \
+    SistemasdeControle/headers/primitiveLibs/polynom.h \
+    SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
+    SistemasdeControle/src/controlLibs/pid.hpp \
+    SistemasdeControle/src/modelLibs/arx.hpp \
+    SistemasdeControle/src/modelLibs/conversions.hpp \
+    SistemasdeControle/src/modelLibs/integrativemodel.hpp \
+    SistemasdeControle/src/modelLibs/model.hpp \
+    SistemasdeControle/src/modelLibs/predictionmodel.hpp \
+    SistemasdeControle/src/modelLibs/statespace.hpp \
+    SistemasdeControle/src/modelLibs/transferfunction.hpp \
+    SistemasdeControle/src/optimizationLibs/leastsquare.hpp \
+    SistemasdeControle/src/optimizationLibs/optimization.hpp \
+    SistemasdeControle/src/optimizationLibs/pso.hpp \
+    SistemasdeControle/src/optimizationLibs/recursiveleastsquare.hpp \
+    SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp \
+    SistemasdeControle/src/primitiveLibs/LinAlg/matrix.hpp \
+    SistemasdeControle/src/primitiveLibs/polynom.hpp \
     client.h
 
 FORMS    += mainwindow.ui

@@ -9,6 +9,8 @@
 #include <QDateTime>
 
 #include "client.h"
+#include "SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h"
+#include "SistemasdeControle/headers/modelLibs/transferfunction.h"
 
 namespace Ui {
 class MainWindow;
@@ -37,12 +39,17 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::MainWindow *ui;
     Client *wifi;
     QString dataToSend;
     unsigned int iterator;
     QTimer *timer;
+    bool calibrationButtoPressed;
 };
 
 #endif // MAINWINDOW_H

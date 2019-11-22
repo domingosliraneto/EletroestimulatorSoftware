@@ -53,7 +53,9 @@ bool Client::writeData(QString str)
 
 QString Client::dataReceived()
 {
-    return this->bytesReaded;
+    QString ret = this->bytesReaded;
+    this->bytesReaded.clear();
+    return ret;
 }
 //END PUBLIC------////////
 
@@ -99,8 +101,8 @@ void Client::Awake() {
  */
 
 void Client::readData(){
-    char buffer[10000] = {0};
-    unsigned sizeChar = socket.bytesAvailable();
+    char *buffer = new char[80000];
+    uint64_t sizeChar = socket.bytesAvailable();
     socket.read(buffer, socket.bytesAvailable());
 
     this->bytesReaded.clear();

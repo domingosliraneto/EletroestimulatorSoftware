@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     dataToSend = "00000\n";
     this->wifi = nullptr;
+    calibrationButtoPressed = false;
 }
 
 MainWindow::~MainWindow()
@@ -38,8 +39,11 @@ void MainWindow::Conectado()
 
 void MainWindow::dadosRecebidos()
 {
-    this->ui->textEdit_2->append(this->wifi->dataReceived());
-    this->ui->textEdit_3->append(QString::number(QDateTime::currentMSecsSinceEpoch()));
+    if(calibrationButtoPressed){
+        this->ui->textEdit_4->append(this->wifi->dataReceived());
+        //calibrationButtoPressed = false;
+    }
+    //this->ui->textEdit_3->append(QString::number(QDateTime::currentMSecsSinceEpoch()));
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -118,4 +122,42 @@ void MainWindow::on_pushButton_4_clicked()
             out <<  tb1.text() << "," << tb2.text() << "," << tb3.text() << "\n";
         }
     }
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    QString str;
+
+    str.append(ui->controlType->currentIndex() + 1);
+
+    str.append(ui->channel_2->currentIndex() + 1);
+
+    str.append(ui->boostCalibration->currentIndex() + 1);
+
+    str.append((uint8_t)(ui->minLimit->text().toUInt()/256) + 1);
+    str.append((uint8_t)(ui->minLimit->text().toUInt()-((uint8_t)(ui->minLimit->text().toUInt()/256))*256) + 1);
+
+    str.append((uint8_t)(ui->maxLimit->text().toUInt()/256) + 1);
+    str.append((uint8_t)(ui->maxLimit->text().toUInt()-((uint8_t)(ui->maxLimit->text().toUInt()/256))*256) + 1);
+
+    if(this->wifi)
+        this->wifi->writeData(str);
+    calibrationButtoPressed = true;
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    LinAlg::Matrix<long double> num = this->ui->lineEdit_3->text().toStdString();
+    LinAlg::Matrix<long double> den = this->ui->lineEdit_4->text().toStdString();
+
+    ModelHandler::TransferFunction<long double> Tf(num,den,12.5);
+    std::string str;
+    str << Tf; this->ui->textEdit_4->append(str.c_str());
+    str.clear();
+    std::cout << Tf;
+    ModelHandler::TransferFunction<long double> Tfc = ModelHandler::d2c(Tf);
+    str << Tfc;
+    str << ModelHandler::c2d(Tfc,(long double)12.5);
+
+    this->ui->textEdit_4->append(str.c_str());
 }
