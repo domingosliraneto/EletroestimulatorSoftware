@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -9,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent) :
     dataToSend = "00000\n";
     this->wifi = nullptr;
     calibrationButtoPressed = false;
+
 }
 
 MainWindow::~MainWindow()
@@ -145,6 +147,7 @@ void MainWindow::on_pushButton_5_clicked()
     calibrationButtoPressed = true;
 }
 
+
 void MainWindow::on_pushButton_6_clicked()
 {
     LinAlg::Matrix<long double> num = this->ui->lineEdit_3->text().toStdString();
@@ -160,4 +163,27 @@ void MainWindow::on_pushButton_6_clicked()
     str << ModelHandler::c2d(Tfc,(long double)12.5);
 
     this->ui->textEdit_4->append(str.c_str());
+
+    str.clear();
+    Tfc.setTransportDelay(12.5);
+    this->ui->textEdit_4->append("\nSintonia por IMC\n");
+    str << ControlHandler::tunningIMC<long double>(Tfc,"PI",13);
+    this->ui->textEdit_4->append(str.c_str()); str.clear();
+
+    this->ui->textEdit_4->append("\nSintonia por tunningCHRServo0OV\n");
+    str << ControlHandler::tunningCHRServo0OV<long double>(Tfc,"PI");
+    this->ui->textEdit_4->append(str.c_str()); str.clear();
+
+    this->ui->textEdit_4->append("\nSintonia por tunningCHRRegulatorio\n");
+    str << ControlHandler::tunningCHRRegulatorio<long double>(Tfc,"PI");
+    this->ui->textEdit_4->append(str.c_str()); str.clear();
+
+    this->ui->textEdit_4->append("\nSintonia por tunningIAELopes\n");
+    str << ControlHandler::tunningIAELopes<long double>(Tfc,"PI");
+    this->ui->textEdit_4->append(str.c_str()); str.clear();
+
+    this->ui->textEdit_4->append("\nSintonia por tunningITAELopes\n");
+    str << ControlHandler::tunningITAELopes<long double>(Tfc,"PI");
+    this->ui->textEdit_4->append(str.c_str()); str.clear();
+
 }

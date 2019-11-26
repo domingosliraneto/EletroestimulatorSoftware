@@ -8,9 +8,11 @@
 #include <QTextBlock>
 #include <QDateTime>
 
+
 #include "client.h"
 #include "SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h"
 #include "SistemasdeControle/headers/modelLibs/transferfunction.h"
+#include "SistemasdeControle/headers/controlLibs/pid.h"
 
 namespace Ui {
 class MainWindow;

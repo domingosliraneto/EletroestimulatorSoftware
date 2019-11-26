@@ -6,6 +6,7 @@
 
 QT       += core gui\
             network\
+            printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,12 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
+    SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.cpp \
         mainwindow.cpp \
-    client.cpp
+    client.cpp \
+    simulator.cpp
 
 HEADERS  += mainwindow.h \
     SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h \
     SistemasdeControle/headers/controlLibs/pid.h \
+    SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h \
+    SistemasdeControle/headers/graphicLibs/plot.h \
     SistemasdeControle/headers/modelLibs/arx.h \
     SistemasdeControle/headers/modelLibs/conversions.h \
     SistemasdeControle/headers/modelLibs/integrativemodel.h \
@@ -47,6 +52,7 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/headers/primitiveLibs/polynom.h \
     SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
     SistemasdeControle/src/controlLibs/pid.hpp \
+    SistemasdeControle/src/graphicLibs/plot.hpp \
     SistemasdeControle/src/modelLibs/arx.hpp \
     SistemasdeControle/src/modelLibs/conversions.hpp \
     SistemasdeControle/src/modelLibs/integrativemodel.hpp \
@@ -61,6 +67,10 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp \
     SistemasdeControle/src/primitiveLibs/LinAlg/matrix.hpp \
     SistemasdeControle/src/primitiveLibs/polynom.hpp \
-    client.h
+    client.h \
+    controlloop.h \
+    controlloop.hpp \
+    simulator.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    simulator.ui
