@@ -164,26 +164,4 @@ void MainWindow::on_pushButton_6_clicked()
 
     this->ui->textEdit_4->append(str.c_str());
 
-    str.clear();
-    Tfc.setTransportDelay(12.5);
-    this->ui->textEdit_4->append("\nSintonia por IMC\n");
-    str << ControlHandler::tunningIMC<long double>(Tfc,"PI",13);
-    this->ui->textEdit_4->append(str.c_str()); str.clear();
-
-    this->ui->textEdit_4->append("\nSintonia por tunningCHRServo0OV\n");
-    str << ControlHandler::tunningCHRServo0OV<long double>(Tfc,"PI");
-    this->ui->textEdit_4->append(str.c_str()); str.clear();
-
-    this->ui->textEdit_4->append("\nSintonia por tunningCHRRegulatorio\n");
-    str << ControlHandler::tunningCHRRegulatorio<long double>(Tfc,"PI");
-    this->ui->textEdit_4->append(str.c_str()); str.clear();
-
-    this->ui->textEdit_4->append("\nSintonia por tunningIAELopes\n");
-    str << ControlHandler::tunningIAELopes<long double>(Tfc,"PI");
-    this->ui->textEdit_4->append(str.c_str()); str.clear();
-
-    this->ui->textEdit_4->append("\nSintonia por tunningITAELopes\n");
-    str << ControlHandler::tunningITAELopes<long double>(Tfc,"PI");
-    this->ui->textEdit_4->append(str.c_str()); str.clear();
-
 }

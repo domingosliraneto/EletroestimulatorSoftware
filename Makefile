@@ -266,6 +266,7 @@ DIST          = ../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		eletroestimulator.pro mainwindow.h \
 		SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h \
 		SistemasdeControle/headers/controlLibs/pid.h \
+		SistemasdeControle/headers/controlLibs/pidTuning.h \
 		SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h \
 		SistemasdeControle/headers/graphicLibs/plot.h \
 		SistemasdeControle/headers/modelLibs/arx.h \
@@ -284,6 +285,7 @@ DIST          = ../Qt/5.12.6/gcc_64/mkspecs/features/spec_pre.prf \
 		SistemasdeControle/headers/primitiveLibs/polynom.h \
 		SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
 		SistemasdeControle/src/controlLibs/pid.hpp \
+		SistemasdeControle/src/controlLibs/pidTuning.hpp \
 		SistemasdeControle/src/graphicLibs/plot.hpp \
 		SistemasdeControle/src/modelLibs/arx.hpp \
 		SistemasdeControle/src/modelLibs/conversions.hpp \
@@ -724,7 +726,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Qt/5.12.6/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h SistemasdeControle/headers/controlLibs/pid.h SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h SistemasdeControle/headers/graphicLibs/plot.h SistemasdeControle/headers/modelLibs/arx.h SistemasdeControle/headers/modelLibs/conversions.h SistemasdeControle/headers/modelLibs/integrativemodel.h SistemasdeControle/headers/modelLibs/model.h SistemasdeControle/headers/modelLibs/predictionmodel.h SistemasdeControle/headers/modelLibs/statespace.h SistemasdeControle/headers/modelLibs/transferfunction.h SistemasdeControle/headers/optimizationLibs/leastsquare.h SistemasdeControle/headers/optimizationLibs/optimization.h SistemasdeControle/headers/optimizationLibs/pso.h SistemasdeControle/headers/optimizationLibs/recursiveleastsquare.h SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h SistemasdeControle/headers/primitiveLibs/polynom.h SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp SistemasdeControle/src/controlLibs/pid.hpp SistemasdeControle/src/graphicLibs/plot.hpp SistemasdeControle/src/modelLibs/arx.hpp SistemasdeControle/src/modelLibs/conversions.hpp SistemasdeControle/src/modelLibs/integrativemodel.hpp SistemasdeControle/src/modelLibs/model.hpp SistemasdeControle/src/modelLibs/predictionmodel.hpp SistemasdeControle/src/modelLibs/statespace.hpp SistemasdeControle/src/modelLibs/transferfunction.hpp SistemasdeControle/src/optimizationLibs/leastsquare.hpp SistemasdeControle/src/optimizationLibs/optimization.hpp SistemasdeControle/src/optimizationLibs/pso.hpp SistemasdeControle/src/optimizationLibs/recursiveleastsquare.hpp SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp SistemasdeControle/src/primitiveLibs/LinAlg/matrix.hpp SistemasdeControle/src/primitiveLibs/polynom.hpp client.h controlloop.h controlloop.hpp simulator.h $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h SistemasdeControle/headers/controlLibs/pid.h SistemasdeControle/headers/controlLibs/pidTuning.h SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h SistemasdeControle/headers/graphicLibs/plot.h SistemasdeControle/headers/modelLibs/arx.h SistemasdeControle/headers/modelLibs/conversions.h SistemasdeControle/headers/modelLibs/integrativemodel.h SistemasdeControle/headers/modelLibs/model.h SistemasdeControle/headers/modelLibs/predictionmodel.h SistemasdeControle/headers/modelLibs/statespace.h SistemasdeControle/headers/modelLibs/transferfunction.h SistemasdeControle/headers/optimizationLibs/leastsquare.h SistemasdeControle/headers/optimizationLibs/optimization.h SistemasdeControle/headers/optimizationLibs/pso.h SistemasdeControle/headers/optimizationLibs/recursiveleastsquare.h SistemasdeControle/headers/primitiveLibs/LinAlg/linalg.h SistemasdeControle/headers/primitiveLibs/LinAlg/matrix.h SistemasdeControle/headers/primitiveLibs/polynom.h SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp SistemasdeControle/src/controlLibs/pid.hpp SistemasdeControle/src/controlLibs/pidTuning.hpp SistemasdeControle/src/graphicLibs/plot.hpp SistemasdeControle/src/modelLibs/arx.hpp SistemasdeControle/src/modelLibs/conversions.hpp SistemasdeControle/src/modelLibs/integrativemodel.hpp SistemasdeControle/src/modelLibs/model.hpp SistemasdeControle/src/modelLibs/predictionmodel.hpp SistemasdeControle/src/modelLibs/statespace.hpp SistemasdeControle/src/modelLibs/transferfunction.hpp SistemasdeControle/src/optimizationLibs/leastsquare.hpp SistemasdeControle/src/optimizationLibs/optimization.hpp SistemasdeControle/src/optimizationLibs/pso.hpp SistemasdeControle/src/optimizationLibs/recursiveleastsquare.hpp SistemasdeControle/src/primitiveLibs/LinAlg/linalg.hpp SistemasdeControle/src/primitiveLibs/LinAlg/matrix.hpp SistemasdeControle/src/primitiveLibs/polynom.hpp client.h controlloop.h controlloop.hpp simulator.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.cpp mainwindow.cpp client.cpp simulator.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui simulator.ui $(DISTDIR)/
 
@@ -2399,6 +2401,7 @@ moc_simulator.cpp: simulator.h \
 		SistemasdeControle/headers/restrictedOptimization/recursiveactiveset.h \
 		SistemasdeControle/src/restrictedOptimization/recursiveactiveset.hpp \
 		SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
+		controlloop.hpp \
 		moc_predefs.h \
 		../Qt/5.12.6/gcc_64/bin/moc
 	/home/andre/Qt/5.12.6/gcc_64/bin/moc $(DEFINES) --include /home/andre/EletroestimulatorSoftware/moc_predefs.h -I/home/andre/Qt/5.12.6/gcc_64/mkspecs/linux-g++ -I/home/andre/EletroestimulatorSoftware -I/home/andre/Qt/5.12.6/gcc_64/include -I/home/andre/Qt/5.12.6/gcc_64/include/QtPrintSupport -I/home/andre/Qt/5.12.6/gcc_64/include/QtWidgets -I/home/andre/Qt/5.12.6/gcc_64/include/QtGui -I/home/andre/Qt/5.12.6/gcc_64/include/QtNetwork -I/home/andre/Qt/5.12.6/gcc_64/include/QtCore -IC:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward simulator.h -o moc_simulator.cpp
@@ -2756,11 +2759,284 @@ main.o: main.cpp mainwindow.h \
 		SistemasdeControle/src/modelLibs/conversions.hpp \
 		SistemasdeControle/headers/controlLibs/pid.h \
 		SistemasdeControle/src/controlLibs/pid.hpp \
-		../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
+		simulator.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QDialog \
+		SistemasdeControle/headers/ImageProcessing/grayimage.h \
+		SistemasdeControle/headers/ImageProcessing/imageprocessing.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QColor \
+		SistemasdeControle/src/ImageProcessing/imageprocessing.hpp \
+		SistemasdeControle/src/ImageProcessing/grayimage.hpp \
+		SistemasdeControle/headers/graphicLibs/plot.h \
+		SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QPointer \
+		../Qt/5.12.6/gcc_64/include/QtCore/QSharedPointer \
+		../Qt/5.12.6/gcc_64/include/QtCore/QTimer \
+		../Qt/5.12.6/gcc_64/include/QtGui/QPainter \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpainter.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QPaintEvent \
+		../Qt/5.12.6/gcc_64/include/QtGui/QMouseEvent \
+		../Qt/5.12.6/gcc_64/include/QtGui/QWheelEvent \
+		../Qt/5.12.6/gcc_64/include/QtGui/QPixmap \
+		../Qt/5.12.6/gcc_64/include/QtCore/QMultiMap \
+		../Qt/5.12.6/gcc_64/include/QtCore/QDebug \
+		../Qt/5.12.6/gcc_64/include/QtCore/QStack \
+		../Qt/5.12.6/gcc_64/include/QtCore/QCache \
+		../Qt/5.12.6/gcc_64/include/QtCore/QMargins \
+		../Qt/5.12.6/gcc_64/include/QtGui/QOpenGLContext \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglcontext.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QScopedPointer \
+		../Qt/5.12.6/gcc_64/include/QtGui/QSurfaceFormat \
+		../Qt/5.12.6/gcc_64/include/QtGui/qsurfaceformat.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopengl.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/qt_windows.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopengles2ext.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglext.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglversionfunctions.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QOpenGLFramebufferObject \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglframebufferobject.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QOffscreenSurface \
+		../Qt/5.12.6/gcc_64/include/QtGui/qoffscreensurface.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qsurface.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QWindow \
+		../Qt/5.12.6/gcc_64/include/QtGui/qwindow.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QEvent \
+		../Qt/5.12.6/gcc_64/include/QtCore/QRect \
+		../Qt/5.12.6/gcc_64/include/QtOpenGL/QGLPixelBuffer \
+		../Qt/5.12.6/gcc_64/include/QtOpenGL/qglpixelbuffer.h \
+		../Qt/5.12.6/gcc_64/include/QtOpenGL/qgl.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpaintengine.h \
+		../Qt/5.12.6/gcc_64/include/QtOpenGL/qglcolormap.h \
+		../Qt/5.12.6/gcc_64/include/QtOpenGL/qtopenglglobal.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QtNumeric \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/QtPrintSupport \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/QtPrintSupportDepends \
+		../Qt/5.12.6/gcc_64/include/QtGui/QtGui \
+		../Qt/5.12.6/gcc_64/include/QtGui/QtGuiDepends \
+		../Qt/5.12.6/gcc_64/include/QtGui/qabstracttextdocumentlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qaccessible.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qaccessiblebridge.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qaccessibleobject.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qaccessibleplugin.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qbackingstore.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qbitmap.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qclipboard.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qdesktopservices.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qdrag.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qgenericmatrix.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qgenericplugin.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qgenericpluginfactory.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qguiapplication.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qinputmethod.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qiconengine.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qiconengineplugin.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qimageiohandler.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qimagereader.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qimagewriter.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qmatrix4x4.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qvector3d.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qvector4d.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qquaternion.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qmovie.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglbuffer.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopengldebug.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglextrafunctions.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglfunctions.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglpaintdevice.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglpixeltransferoptions.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglshaderprogram.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopengltexture.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopengltextureblitter.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QMatrix3x3 \
+		../Qt/5.12.6/gcc_64/include/QtGui/QMatrix4x4 \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopengltimerquery.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglvertexarrayobject.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qopenglwindow.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QPaintDeviceWindow \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpaintdevicewindow.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QPaintDevice \
+		../Qt/5.12.6/gcc_64/include/QtGui/QImage \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpagedpaintdevice.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpagelayout.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpagesize.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpdfwriter.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpicture.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpictureformatplugin.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qpixmapcache.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qrasterwindow.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qscreen.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QSize \
+		../Qt/5.12.6/gcc_64/include/QtCore/QSizeF \
+		../Qt/5.12.6/gcc_64/include/QtGui/QTransform \
+		../Qt/5.12.6/gcc_64/include/QtGui/qsessionmanager.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qstandarditemmodel.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qstatictext.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qstylehints.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qsyntaxhighlighter.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qtextdocumentfragment.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qtextdocumentwriter.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qtextlist.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qtexttable.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qvalidator.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qtguiversion.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QtWidgets \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QtWidgetsDepends \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleoption.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qslider.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractslider.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstyle.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtabbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qrubberband.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qaccessiblewidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qaction.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qactiongroup.h \
 		../Qt/5.12.6/gcc_64/include/QtWidgets/qapplication.h \
 		../Qt/5.12.6/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../Qt/5.12.6/gcc_64/include/QtGui/qguiapplication.h \
-		../Qt/5.12.6/gcc_64/include/QtGui/qinputmethod.h
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qboxlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgridlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcalendarwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcheckbox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcolordialog.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcolormap.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcolumnview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcombobox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcommandlinkbutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qpushbutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcommonstyle.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcompleter.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdatawidgetmapper.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdatetimeedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdial.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdirmodel.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qfileiconprovider.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdockwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdrawutil.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qerrormessage.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qfiledialog.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qfilesystemmodel.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qfocusframe.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qfontcombobox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qfontdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qformlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QLayout \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgesture.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgesturerecognizer.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsanchorlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicseffect.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsgridlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsitemanimation.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicslinearlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsproxywidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicstransform.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/QVector3D \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qscrollarea.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgroupbox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qheaderview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qinputdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlineedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qitemdelegate.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qitemeditorfactory.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qkeyeventtransition.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qkeysequenceedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlabel.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlcdnumber.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlistview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlistwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmdiarea.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmdisubwindow.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmenu.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmenubar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmouseeventtransition.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qopenglwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qplaintextedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtextedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qprogressbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qprogressdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qproxystyle.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QCommonStyle \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qradiobutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qscrollbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qscroller.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QPointF \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QScrollerProperties \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qscrollerproperties.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qshortcut.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qsizegrip.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qspinbox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qsplashscreen.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qsplitter.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstackedlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstackedwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstatusbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleditemdelegate.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstylefactory.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstylepainter.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleplugin.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qsystemtrayicon.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtableview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtablewidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtextbrowser.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtoolbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtoolbox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtoolbutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtooltip.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtreeview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtreewidget.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtreewidgetitemiterator.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qundogroup.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qundostack.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qundoview.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qwhatsthis.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qwidgetaction.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qwizard.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtwidgetsversion.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qtprintsupportglobal.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qtprintsupport-config.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qabstractprintdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qpagesetupdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qprintdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qprintengine.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qprinter.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qprinterinfo.h \
+		../Qt/5.12.6/gcc_64/include/QtCore/QPair \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qprintpreviewdialog.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qprintpreviewwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtPrintSupport/qtprintsupportversion.h \
+		SistemasdeControle/src/graphicLibs/plot.hpp \
+		controlloop.h \
+		SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h \
+		SistemasdeControle/headers/restrictedOptimization/activeset.h \
+		SistemasdeControle/headers/restrictedOptimization/quadprog.h \
+		SistemasdeControle/headers/primitiveLibs/LinAlg/matrixrestriction.h \
+		SistemasdeControle/src/primitiveLibs/LinAlg/matrixrestriction.hpp \
+		SistemasdeControle/headers/restrictedOptimization/simplex.h \
+		SistemasdeControle/headers/restrictedOptimization/linprog.h \
+		SistemasdeControle/src/restrictedOptimization/linprog.hpp \
+		SistemasdeControle/src/restrictedOptimization/simplex.hpp \
+		SistemasdeControle/src/restrictedOptimization/quadprog.hpp \
+		SistemasdeControle/src/restrictedOptimization/activeset.hpp \
+		SistemasdeControle/headers/restrictedOptimization/recursiveactiveset.h \
+		SistemasdeControle/src/restrictedOptimization/recursiveactiveset.hpp \
+		SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
+		controlloop.hpp \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 qcustomplot.o: SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.cpp SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h \
@@ -3591,7 +3867,50 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		SistemasdeControle/src/modelLibs/conversions.hpp \
 		SistemasdeControle/headers/controlLibs/pid.h \
 		SistemasdeControle/src/controlLibs/pid.hpp \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qapplication.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qguiapplication.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qinputmethod.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QComboBox \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qcombobox.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstyleoption.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../Qt/5.12.6/gcc_64/include/QtGui/qvalidator.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qslider.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractslider.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstyle.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtabbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qrubberband.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qframe.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QGridLayout \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qgridlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qboxlayout.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QLabel \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlabel.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QLineEdit \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qlineedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QMenuBar \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmenubar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qmenu.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qaction.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qactiongroup.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QPushButton \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qpushbutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QStatusBar \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qstatusbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QTabWidget \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QTextEdit \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtextedit.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QToolBar \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/qtoolbar.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 client.o: client.cpp client.h \
@@ -4396,7 +4715,16 @@ simulator.o: simulator.cpp simulator.h \
 		SistemasdeControle/headers/restrictedOptimization/recursiveactiveset.h \
 		SistemasdeControle/src/restrictedOptimization/recursiveactiveset.hpp \
 		SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
-		ui_simulator.h
+		controlloop.hpp \
+		ui_simulator.h \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QApplication \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QCheckBox \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QComboBox \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QFrame \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QGridLayout \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QLabel \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QLineEdit \
+		../Qt/5.12.6/gcc_64/include/QtWidgets/QPushButton
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simulator.o simulator.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

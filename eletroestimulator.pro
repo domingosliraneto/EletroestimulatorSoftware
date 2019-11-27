@@ -34,6 +34,7 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     SistemasdeControle/headers/controlLibs/modelpredictivecontrol.h \
     SistemasdeControle/headers/controlLibs/pid.h \
+    SistemasdeControle/headers/controlLibs/pidTuning.h \
     SistemasdeControle/headers/graphicLibs/QCustomPlot/qcustomplot.h \
     SistemasdeControle/headers/graphicLibs/plot.h \
     SistemasdeControle/headers/modelLibs/arx.h \
@@ -52,6 +53,7 @@ HEADERS  += mainwindow.h \
     SistemasdeControle/headers/primitiveLibs/polynom.h \
     SistemasdeControle/src/controlLibs/modelpredictivecontrol.hpp \
     SistemasdeControle/src/controlLibs/pid.hpp \
+    SistemasdeControle/src/controlLibs/pidTuning.hpp \
     SistemasdeControle/src/graphicLibs/plot.hpp \
     SistemasdeControle/src/modelLibs/arx.hpp \
     SistemasdeControle/src/modelLibs/conversions.hpp \
